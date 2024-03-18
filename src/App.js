@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AddTask from './components/AddTask';
 import TaskList from './components/TaskList';
+import "./App.css"
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -21,14 +22,16 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className="main-container">
+    <div className='center-container'>
+      <h1 className="app-heading">Todo List</h1>
       <AddTask onAdd={handleAddTask} />
       <TaskList
         tasks={tasks}
         onDelete={handleDeleteTask}
         onToggleCheck={handleToggleCheck}
       />
+    </div>
     </div>
   );
 };
